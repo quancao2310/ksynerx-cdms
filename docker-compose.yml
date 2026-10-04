@@ -36,6 +36,7 @@ services:
       - "8001:8001"
     volumes:
       - ./cdms:/app
+      - cdms_media:/app/media
     depends_on:
       - postgres-cdms
     env_file:
@@ -78,6 +79,7 @@ services:
 volumes:
   postgres_vietful_data:
   postgres_cdms_data:
+  cdms_media:
 
 networks:
   vietful_network:

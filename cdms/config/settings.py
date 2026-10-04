@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.products',
     'apps.polling',
+    'apps.uploads',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +120,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# MEDIA
+MEDIA_ROOT = str(BASE_DIR / "media")
+MEDIA_URL = "/media/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -136,3 +141,6 @@ VIETFUL_MAX_ATTEMPTS = env.int("VIETFUL_MAX_ATTEMPTS", default=3)
 VIETFUL_BACKOFF_SECONDS = env.float("VIETFUL_BACKOFF_SECONDS", default=2.0)
 
 CDMS_POLL_INTERVAL_SECONDS = env.int("CDMS_POLL_INTERVAL_SECONDS", default=60)
+
+CDMS_UPLOAD_MAX_BYTES = env.int("CDMS_UPLOAD_MAX_BYTES", default=10 * 1024 * 1024)
+CDMS_UPLOAD_CHUNK_SIZE = env.int("CDMS_UPLOAD_CHUNK_SIZE", default=500)
