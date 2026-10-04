@@ -124,7 +124,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {}
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "config.pagination.DefaultPagination",
+}
 
 VIETFUL_BASE_URL = env("VIETFUL_BASE_URL", default="http://localhost:8000")
 VIETFUL_PRODUCTS_PATH = env("VIETFUL_PRODUCTS_PATH", default="/api/v1/products/")
