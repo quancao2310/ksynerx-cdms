@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'apps.products',
+    'apps.polling',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,12 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {}
+
+VIETFUL_BASE_URL = env("VIETFUL_BASE_URL", default="http://localhost:8000")
+VIETFUL_PRODUCTS_PATH = env("VIETFUL_PRODUCTS_PATH", default="/api/v1/products/")
+VIETFUL_PAGE_SIZE = env.int("VIETFUL_PAGE_SIZE", default=100)
+VIETFUL_TIMEOUT = env.int("VIETFUL_TIMEOUT", default=10)
+VIETFUL_MAX_ATTEMPTS = env.int("VIETFUL_MAX_ATTEMPTS", default=3)
+VIETFUL_BACKOFF_SECONDS = env.float("VIETFUL_BACKOFF_SECONDS", default=2.0)
+
+CDMS_POLL_INTERVAL_SECONDS = env.int("CDMS_POLL_INTERVAL_SECONDS", default=60)

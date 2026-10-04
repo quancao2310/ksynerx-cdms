@@ -1,3 +1,5 @@
+from enum import StrEnum
+
 FIELD_MAP = (
     ("productId", "product_id"),
     ("sku", "sku"),
@@ -14,8 +16,10 @@ FIELD_MAP = (
     ("categories", "categories"),
 )
 
-CREATED = "created"
-UPDATED = "updated"
-UNCHANGED = "unchanged"
-STALE = "stale"
-REJECTED = "rejected"
+
+class ChangeStatus(StrEnum):
+    CREATED = "created"
+    UPDATED = "updated"
+    UNCHANGED = "unchanged"
+    STALE = "stale"
+    REJECTED = "rejected"
